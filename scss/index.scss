@@ -30,6 +30,43 @@ html {
       border-radius: 0.6rem;
       background-color: rgba($color: #fff, $alpha: 0.1);
       box-shadow: 0.1rem 0.1rem 3rem #000;
+
+      h1 {
+        @extend %title;
+      }
+
+      p {
+        @extend %text;
+        width: 95%;
+      }
+
+      label {
+        @extend %label;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      input {
+        @extend %input;
+        text-align: center;
+        width: 95%;
+        padding: 0.3rem 0 0 0;
+        border: 0.1rem solid rgba($color: #000, $alpha: 0.1);
+        background-color: rgba($color: #fff, $alpha: 0.2);
+        border-radius: 0.7rem;
+        box-shadow: 0.1rem 0.1rem 0.5rem #000;
+
+        &::placeholder {
+          @extend %input;
+        }
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+      }
     }
   }
 }

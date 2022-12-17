@@ -29,16 +29,35 @@
   <body>
     <div class="step">
       <h1>The first step</h1>
+      <p>
+        Dear user!<br />
+        Please enter the positive number that will be the start of the range.
+      </p>
       <label for="first-number"
-        >The first number input<input type="number"
+        >Place for entering the first number:<input
+          type="number"
+          min="0"
+          max="999999"
+          placeholder="..."
       /></label>
     </div>
+
     <div class="step">
       <h1>The second step</h1>
+      <p>
+        Dear user!<br />
+        The second step is to enter the number that will be the end of the
+        range.
+      </p>
       <label for="second-number"
-        >The second number input<input type="number"
+        >Place for entering the second number:<input
+          type="number"
+          min="0"
+          max="999999"
+          placeholder="..."
       /></label>
     </div>
+
     <div class="step"><h1>The third step</h1></div>
   </body>
 </html>

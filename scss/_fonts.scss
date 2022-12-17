@@ -3,3 +3,30 @@
 %fontfamily {
   font-family: "Mina", sans-serif;
 }
+
+%title {
+  color: rgba($color: #fff, $alpha: 0.6);
+  font-weight: bolder;
+  font-size: 2rem;
+  text-shadow: 0.1rem 0.1rem #000;
+}
+
+%text {
+  color: rgba($color: #fff, $alpha: 0.4);
+  font-weight: normal;
+  font-size: 1.2rem;
+  text-shadow: 0.1rem 0.1rem #000;
+}
+
+%label {
+  color: rgba($color: #fff, $alpha: 0.4);
+  font-weight: normal;
+  font-size: 0.9rem;
+}
+
+%input {
+  color: rgba($color: #fff, $alpha: 0.4);
+  font-size: 3rem;
+  letter-spacing: 0.3rem;
+  font-weight: bolder;
+}
