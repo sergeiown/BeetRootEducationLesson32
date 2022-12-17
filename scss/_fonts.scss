@@ -46,3 +46,11 @@
   letter-spacing: 0.3rem;
   text-shadow: 0.15rem 0.15rem #000;
 }
+
+%button-active {
+  color: rgba($color: #fff, $alpha: 0.7);
+  font-weight: bolder;
+  font-size: 1.8rem;
+  letter-spacing: 0.3rem;
+  text-shadow: 0.2rem 0.2rem #000;
+}

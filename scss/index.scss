@@ -57,6 +57,11 @@ html {
         background-color: rgba($color: #fff, $alpha: 0.2);
         border-radius: 0.7rem;
         box-shadow: 0.1rem 0.1rem 0.5rem #000;
+        transition: all 0.8s ease-in-out;
+
+        &:hover {
+          background-color: rgba($color: #fff, $alpha: 0.1);
+        }
 
         &::placeholder {
           @extend %input;
@@ -72,11 +77,16 @@ html {
       button {
         @extend %button;
         border: none;
-        transition: all 0.2s ease-in-out;
+        transition: all 0.15s ease-in-out;
 
         &:hover {
           @extend %button-hover;
           scale: 1.1;
+        }
+
+        &:active {
+          @extend %button-active;
+          scale: 1.2;
         }
       }
     }
