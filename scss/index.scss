@@ -1,5 +1,6 @@
 @import "../scss/reset";
 @import "../scss/fonts";
+@import "../scss/adaptive";
 
 html {
   @extend %fontfamily;
@@ -8,7 +9,7 @@ html {
     user-select: none;
     max-width: 1200px;
     width: 96%;
-    margin: 0 auto;
+    margin: auto auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -51,7 +52,7 @@ html {
         @extend %input;
         text-align: center;
         width: 95%;
-        padding: 0.3rem 0 0 0;
+        padding: 0.3rem 0.3rem 0 0.3rem;
         border: 0.1rem solid rgba($color: #000, $alpha: 0.1);
         background-color: rgba($color: #fff, $alpha: 0.2);
         border-radius: 0.7rem;
@@ -67,24 +68,17 @@ html {
           margin: 0;
         }
       }
+
+      button {
+        @extend %button;
+        border: none;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+          @extend %button-hover;
+          scale: 1.1;
+        }
+      }
     }
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  html {
-    font-size: 75%;
-
-    body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-  }
-}
-
-@media only screen and (max-width: 320px) {
-  html {
-    font-size: 62.5%;
   }
 }
