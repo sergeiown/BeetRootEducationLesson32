@@ -27,6 +27,22 @@
 %input {
   color: rgba($color: #fff, $alpha: 0.4);
   font-size: 3rem;
-  letter-spacing: 0.3rem;
+  letter-spacing: 0.5rem;
   font-weight: bolder;
+}
+
+%button {
+  color: rgba($color: #fff, $alpha: 0.4);
+  font-weight: bolder;
+  font-size: 1.8rem;
+  letter-spacing: 0.2rem;
+  text-shadow: 0.1rem 0.1rem #000;
+}
+
+%button-hover {
+  color: rgba($color: #fff, $alpha: 0.5);
+  font-weight: bolder;
+  font-size: 1.8rem;
+  letter-spacing: 0.3rem;
+  text-shadow: 0.15rem 0.15rem #000;
 }
