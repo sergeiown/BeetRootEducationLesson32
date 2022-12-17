@@ -1,6 +1,5 @@
 @import "../scss/reset";
 @import "../scss/fonts";
-@import "../scss/adaptive";
 
 html {
   @extend %fontfamily;
@@ -8,12 +7,12 @@ html {
   body {
     user-select: none;
     max-width: 1200px;
-    width: 96%;
-    margin: auto auto;
+    width: 95%;
+    margin: 15vh auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    align-items: flex-start;
+    align-items: center;
     background-image: url(../img/bg.png);
     background-repeat: repeat;
     background-size: auto;
@@ -79,16 +78,50 @@ html {
         border: none;
         transition: all 0.15s ease-in-out;
 
-        &:hover {
-          @extend %button-hover;
-          scale: 1.1;
+        &:disabled {
+          @extend %button-disabled;
+          cursor: default;
         }
 
-        &:active {
-          @extend %button-active;
-          scale: 1.2;
+        &:enabled {
+          &:hover {
+            @extend %button-hover;
+            scale: 1.1;
+          }
+
+          &:active {
+            @extend %button-active;
+            scale: 1.2;
+          }
         }
       }
     }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  html {
+    font-size: 75%;
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0 auto;
+
+      .step {
+        margin: 1.5rem;
+
+        &:first-child {
+          margin-top: 3rem;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  html {
+    font-size: 62.5%;
   }
 }

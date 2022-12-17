@@ -39,6 +39,11 @@
   text-shadow: 0.1rem 0.1rem #000;
 }
 
+%button-disabled {
+  color: rgba($color: #fff, $alpha: 0.2);
+  text-shadow: none;
+}
+
 %button-hover {
   color: rgba($color: #fff, $alpha: 0.5);
   font-weight: bolder;
