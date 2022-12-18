@@ -30,6 +30,14 @@ html {
       border-radius: 0.6rem;
       background-color: rgba($color: #fff, $alpha: 0.1);
       box-shadow: 0.1rem 0.1rem 3rem #000;
+      //smooth appearance
+      animation-name: open;
+      animation-duration: 2s;
+      animation-iteration-count: 1;
+      animation-direction: normal;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+      animation-delay: 0s;
 
       h1 {
         @extend %title;
@@ -51,7 +59,7 @@ html {
         @extend %input;
         text-align: center;
         width: 95%;
-        padding: 0.3rem 0.3rem 0 0.3rem;
+        padding: 0.5rem 0.3rem 0 0.3rem;
         border: 0.1rem solid rgba($color: #000, $alpha: 0.1);
         background-color: rgba($color: #fff, $alpha: 0.2);
         border-radius: 0.7rem;
@@ -99,6 +107,7 @@ html {
   }
 }
 
+// adaptive
 @media only screen and (max-width: 768px) {
   html {
     font-size: 75%;
@@ -123,5 +132,19 @@ html {
 @media only screen and (max-width: 320px) {
   html {
     font-size: 62.5%;
+  }
+}
+
+// animation
+@keyframes open {
+  0% {
+    display: flex;
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
   }
 }

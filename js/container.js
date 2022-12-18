@@ -1,31 +1,39 @@
-import * as normal from "./normal.js";
+// import * as normal from "./normal.js";
 
-const buttonToSecond = document.querySelector(".next-to-second");
-const buttonToThird = document.querySelector(".next-to-third");
 const inputFirstNumber = document.querySelector("#first-number");
 const inputSecondNumber = document.querySelector("#second-number");
 
+const buttonToSecond = document.querySelector("#next-to-second");
+const buttonToThird = document.querySelector("#next-to-third");
+const buttonClear = document.querySelector("#clear");
+
+// document.getElementById("second-step").style.display = "none";
+// document.getElementById("third-step").style.display = "none";
+
+function showHideSecond() {
+  document.getElementById("second-step").style.display === "none"
+    ? (document.getElementById("second-step").style.display = "flex")
+    : (document.getElementById("second-step").style.display = "none");
+}
+
+function showHideThird() {
+  document.getElementById("third-step").style.display === "none"
+    ? (document.getElementById("third-step").style.display = "flex")
+    : (document.getElementById("third-step").style.display = "none");
+}
+
 function clearInput() {
+  inputFirstNumber.value = "";
+  inputSecondNumber.value = "";
+
   buttonToSecond.disabled = true;
   buttonToThird.disabled = true;
+
+  showHideSecond();
+  showHideThird();
 }
 
 clearInput();
-
-// expressions result
-function expressionResultInfo() {
-  document.querySelector(".first-result").innerHTML = `<span> result is ${
-    maximum.expressionResult().first
-  }</span>`;
-
-  document.querySelector(".second-result").innerHTML = `<span> result is ${
-    maximum.expressionResult().second
-  }</span>`;
-
-  document.querySelector(".third-result").innerHTML = `<span> result is ${
-    maximum.expressionResult().third
-  }</span>`;
-}
 
 // events listeners
 inputFirstNumber.addEventListener("input", () => {
@@ -36,12 +44,8 @@ inputSecondNumber.addEventListener("input", () => {
   buttonToThird.disabled = false;
 });
 
-document
-  .querySelector(".next-to-second")
-  .addEventListener("click", showSecondStep);
+buttonToSecond.addEventListener("click", showHideSecond);
 
-document
-  .querySelector(".next-to-third")
-  .addEventListener("click", showThirdStep);
+buttonToThird.addEventListener("click", showHideThird);
 
-document.querySelector(".clear").addEventListener("click", clearInput);
+buttonClear.addEventListener("click", clearInput);
