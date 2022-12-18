@@ -31,6 +31,13 @@
   font-weight: bolder;
 }
 
+%textarea {
+  color: rgba($color: #fff, $alpha: 0.4);
+  font-size: 2rem;
+  letter-spacing: 0.5rem;
+  font-weight: bolder;
+}
+
 %button {
   color: rgba($color: #fff, $alpha: 0.4);
   font-weight: bolder;
