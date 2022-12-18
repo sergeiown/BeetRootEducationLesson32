@@ -38,6 +38,13 @@
   font-weight: bolder;
 }
 
+%warning {
+  color: rgba($color: #fff, $alpha: 0.4);
+  font-size: 1.5rem;
+  letter-spacing: 0.3rem;
+  font-weight: bolder;
+}
+
 %button {
   color: rgba($color: #fff, $alpha: 0.4);
   font-weight: bolder;
