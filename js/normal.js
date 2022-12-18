@@ -7,7 +7,7 @@ function isPerfect(number) {
     }
     divisor++;
   }
-  if (sumDiv == number) {
+  if (sumDivisor == number) {
     return true;
   } else {
     return false;
@@ -16,12 +16,21 @@ function isPerfect(number) {
 
 function isPerfectInRange(min, max) {
   let arrPerfect = [];
-  for (let i = min; i <= max; i++) {
-    if (isPerfect(i)) {
-      arrPerfect.push(i);
+  let warning = false;
+
+  if (min < 1 || max <= min || max > 50000) {
+    return warning;
+  } else {
+    for (let i = min; i <= max; i++) {
+      if (isPerfect(i)) {
+        arrPerfect.push(i);
+      }
     }
   }
+
   return arrPerfect;
 }
+
+// console.log(isPerfectInRange(1, 50000));
 
 export { isPerfect, isPerfectInRange };

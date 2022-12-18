@@ -6,7 +6,9 @@ const inputSecondNumber = document.querySelector("#second-number");
 const buttonToSecond = document.querySelector("#next-to-second");
 const buttonToThird = document.querySelector("#next-to-third");
 const buttonClear = document.querySelector("#clear");
+const buttonReturn = document.querySelector("#return");
 
+showHideWarning();
 clearInput();
 
 // functions
@@ -22,6 +24,12 @@ function showHideThird() {
     : (document.getElementById("third-step").style.display = "none");
 }
 
+function showHideWarning() {
+  document.getElementById("warning-window").style.display === "none"
+    ? (document.getElementById("warning-window").style.display = "flex")
+    : (document.getElementById("warning-window").style.display = "none");
+}
+
 function clearInput() {
   inputFirstNumber.value = "";
   inputSecondNumber.value = "";
@@ -31,6 +39,18 @@ function clearInput() {
 
   showHideSecond();
   showHideThird();
+}
+
+function returnToInput() {
+  inputFirstNumber.value = "";
+  inputSecondNumber.value = "";
+
+  buttonToSecond.disabled = true;
+  buttonToThird.disabled = true;
+
+  showHideSecond();
+  showHideThird();
+  showHideWarning();
 }
 
 function buttonDisabler() {
@@ -43,16 +63,26 @@ function buttonDisabler() {
 }
 
 function perfectInRange() {
+  const timerStart = new Date().getTime();
   const min = Number(document.querySelector("#first-number").value);
   const max = Number(document.querySelector("#second-number").value);
 
-  document.querySelector(
-    ".result-text"
-  ).innerHTML = `<span>For the range with start at ${min} and end at ${max}the list of perfect numbers is:</span>`;
+  if (!normal.isPerfectInRange(min, max)) {
+    showHideWarning();
+  } else {
+    document.querySelector(
+      ".result-text"
+    ).innerHTML = `<span>For the range from <strong>${min}</strong> to <strong>${max}</strong> the list of perfect numbers is:</span>`;
 
-  document.querySelector(".rest-result").innerHTML = `<span>${
-    normal.numberOfChocolates(amount, price).restAmount
-  } USD</span>`;
+    document.querySelector(".result-arr").innerText = normal.isPerfectInRange(
+      min,
+      max
+    );
+  }
+  const timerStop = new Date().getTime() - timerStart;
+  document.querySelector(".result-timer").innerText = `The calculation takes ${(
+    timerStop / 1000
+  ).toFixed(3)} second(s).`;
 }
 
 // events listeners
@@ -69,5 +99,7 @@ buttonToSecond.addEventListener("click", buttonDisabler);
 
 buttonToThird.addEventListener("click", showHideThird);
 buttonToThird.addEventListener("click", buttonDisabler);
+buttonToThird.addEventListener("click", perfectInRange);
 
 buttonClear.addEventListener("click", clearInput);
+buttonReturn.addEventListener("click", returnToInput);

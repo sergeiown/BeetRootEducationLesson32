@@ -39,7 +39,7 @@
           id="first-number"
           type="number"
           min="0"
-          max="100000"
+          max="49999"
           placeholder="..."
       /></label>
       <button id="next-to-second">next</button>
@@ -57,7 +57,7 @@
           id="second-number"
           type="number"
           min="0"
-          max="100000"
+          max="50000"
           placeholder="..."
       /></label>
       <button id="next-to-third">next</button>
@@ -67,7 +67,18 @@
       <h1>The third step</h1>
       <p class="result-text"></p>
       <textarea class="result-arr" id="" cols="30" rows="5"></textarea>
+      <p class="result-timer"></p>
       <button id="clear">clear</button>
+    </div>
+
+    <div class="warning" id="warning-window">
+      <h1>WARNING</h1>
+      <p>The beginning of the range must be a positive number.</p>
+      <p>
+        The end of the range must be up to 50,000 (inclusive) and greater than
+        the beginning.
+      </p>
+      <button id="return">return</button>
     </div>
   </body>
 </html>
