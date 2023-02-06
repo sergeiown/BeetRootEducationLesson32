@@ -1,12 +1,5 @@
-# BeetRootEducation
+# User interaction
 
-**_LMS Beetroot Academy progress_**
-
-## ДОМАШНЄ ЗАВДАННЯ
-
-**Норма**
-
-1. Напиши функцію, яка перевіряє, чи є передане їй число “досконалим числом”. Досконале число - це число, яке дорівнює сумі всіх своїх дільників.
-2. Напиши функцію, яка приймає мінімальне і максимальне значення для діапазону, і виводить тільки ті числа з діапазону, які є досконалими. Використовуй написану раніше функцію, щоб дізнатися, чи є це число досконалим.
+Learn about DOM elements and user interaction using the example of a task to find a perfect number (a number that is equal to the sum of all its divisors).
 
 ![screenshot](./img/screenshot.png)
